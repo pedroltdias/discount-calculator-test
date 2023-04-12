@@ -1,3 +1,34 @@
+def case_residencial(consumption):
+    if consumption < 10000:
+        return 0.18
+    elif 10000 <= consumption <= 20000:
+        return 0.22
+    elif consumption > 20000:
+        return 0.25
+    
+def case_comercial(consumption):
+    if consumption < 10000:
+        return 0.16
+    elif 10000 <= consumption <= 20000:
+        return 0.18
+    elif consumption > 20000:
+        return 0.22
+    
+def case_industrial(consumption):
+    if consumption < 10000:
+        return 0.12
+    elif 10000 <= consumption <= 20000:
+        return 0.15
+    elif consumption > 20000:
+        return 0.18
+
+def execute_case(case):
+    switcher = {
+        'Residencial': case_residencial,
+        'Comercial': case_comercial,
+        'Industrial': case_industrial
+	}
+
 def calculator(consumption: list, distributor_tax: float, tax_type: str) -> tuple:
     """
     returns a tuple of floats contained anual savings, monthly savings, applied_discount and coverage
@@ -8,7 +39,7 @@ def calculator(consumption: list, distributor_tax: float, tax_type: str) -> tupl
     coverage = 0
 
     # your code here #
-
+    
     return (
         round(annual_savings, 2),
         round(monthly_savings, 2),
