@@ -1,6 +1,6 @@
 from django.urls import path
 from calculadora.views import index
 
-urlpattern = [
+urlpatterns = [
     path('calculadora/', index),
 ];
